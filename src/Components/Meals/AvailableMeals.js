@@ -1,5 +1,6 @@
 import React from "react";
 import classes from "./AvailableMeals.module.css";
+import Button from "../Layout/Button";
 
 const allMeals = [
   {
@@ -33,11 +34,14 @@ const AvailableMeals = () => {
     <div className={classes.container}>
       {allMeals.map((meal) => {
         return (
-          <ul className={classes.meal}>
-            <p>{meal.name}</p>
-            <li>{meal.description}</li>
-            <li>{meal.price}$</li>
-          </ul>
+          <div className={classes.item}>
+            <ul className={classes.meal}>
+              <p>{meal.name}</p>
+              <li>{meal.description}</li>
+              <li>{meal.price}$</li>
+            </ul>
+            <Button>+add</Button>
+          </div>
         );
       })}
     </div>

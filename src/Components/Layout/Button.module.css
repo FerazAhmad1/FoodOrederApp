@@ -1,0 +1,15 @@
+.btn {
+  width: 70px;
+  height: 25px;
+  background-color: #8a2b06;
+  color: white;
+  border-radius: 15px;
+  border: none;
+  outline: none;
+}
+.qty {
+  width: 50px;
+}
+.btnfamily label {
+  font-weight: bold;
+}

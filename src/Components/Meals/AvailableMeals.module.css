@@ -4,9 +4,15 @@
   border-radius: 14px;
   margin: 10px 20% 0 20%;
 }
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid gray;
+  padding-right: 20px;
+}
 .meal {
   list-style-type: none;
-  border-bottom: 1px solid gray;
 }
 .meal p {
   font-weight: Bold;
