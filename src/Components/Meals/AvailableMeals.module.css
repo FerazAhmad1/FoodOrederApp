@@ -1,0 +1,13 @@
+.container {
+  background-color: white;
+  padding: 10px 10px 0 10px;
+  border-radius: 14px;
+  margin: 10px 20% 0 20%;
+}
+.meal {
+  list-style-type: none;
+  border-bottom: 1px solid gray;
+}
+.meal p {
+  font-weight: Bold;
+}
