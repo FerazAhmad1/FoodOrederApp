@@ -1,6 +1,6 @@
 import React from "react";
 import classes from "./AvailableMeals.module.css";
-import Button from "../Layout/Button";
+import Quantity from "../Layout/Quantity";
 
 const allMeals = [
   {
@@ -40,7 +40,7 @@ const AvailableMeals = () => {
               <li>{meal.description}</li>
               <li>{meal.price}$</li>
             </ul>
-            <Button>+add</Button>
+            <Quantity />
           </div>
         );
       })}

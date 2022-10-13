@@ -14,6 +14,7 @@ const Header = (props) => {
         <img src={mealsImage} alt=" A table full of delicius food " />
       </div>
       <Summary></Summary>
+      {props.children}
     </Fragment>
   );
 };
