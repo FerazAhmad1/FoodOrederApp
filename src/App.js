@@ -11,7 +11,7 @@ function App() {
   };
   return (
     <div>
-      {cart && <Cart />}
+      {cart && <Cart onClick={cartHandler} />}
       <Header onClick={cartHandler}></Header>
       <AvailableMeals />
     </div>
