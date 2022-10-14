@@ -3,6 +3,7 @@ import Header from "./Components/Layout/Header";
 import AvailableMeals from "./Components/Meals/AvailableMeals";
 import Cart from "./Components/Cart/Cart";
 import { useState } from "react";
+import CartProvider from "./Store/CartProvider";
 
 function App() {
   const [cart, setCart] = useState(false);
@@ -10,11 +11,13 @@ function App() {
     setCart(decision);
   };
   return (
-    <div>
-      {cart && <Cart onClick={cartHandler} />}
-      <Header onClick={cartHandler}></Header>
-      <AvailableMeals />
-    </div>
+    <CartProvider>
+      <div>
+        {cart && <Cart onClick={cartHandler} />}
+        <Header onClick={cartHandler}></Header>
+        <AvailableMeals />
+      </div>
+    </CartProvider>
   );
 }
 

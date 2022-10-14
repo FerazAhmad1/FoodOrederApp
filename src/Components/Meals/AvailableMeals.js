@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useContext, useRef } from "react";
 import classes from "./AvailableMeals.module.css";
 import Quantity from "../Layout/Quantity";
-
+import Button from "../Layout/Button";
+import cartContext from "../../Store/cart-context";
 const allMeals = [
   {
     id: "m1",
@@ -30,17 +31,33 @@ const allMeals = [
 ];
 
 const AvailableMeals = () => {
+  const ctx = useContext(cartContext);
+  const inputRef = useRef();
+  console.log(inputRef);
+
+  const clickHandler = (id) => {
+    const enteredAmount = inputRef.current.value;
+    console.log(enteredAmount);
+    const found = allMeals.find((meal) => {
+      return meal.id === id;
+    });
+    ctx.addItem(found);
+    console.log(ctx.items);
+  };
   return (
     <div className={classes.container}>
       {allMeals.map((meal) => {
         return (
-          <div className={classes.item}>
+          <div className={classes.item} key={meal.id}>
             <ul className={classes.meal}>
               <p>{meal.name}</p>
               <li>{meal.description}</li>
               <li>{meal.price}$</li>
             </ul>
-            <Quantity />
+            <Quantity id={meal.id} ref={inputRef} />
+            <Button onClick={clickHandler} id={meal.id}>
+              +Add
+            </Button>
           </div>
         );
       })}

@@ -17,3 +17,12 @@
 .meal p {
   font-weight: Bold;
 }
+.btn {
+  width: 70px;
+  height: 25px;
+  background-color: #8a2b06;
+  color: white;
+  border-radius: 15px;
+  border: none;
+  outline: none;
+}

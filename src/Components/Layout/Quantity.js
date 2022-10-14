@@ -1,15 +1,13 @@
 import React from "react";
 import classes from "./Quantity.module.css";
-import Button from "./Button";
 
-const Quantity = (props) => {
+const Quantity = React.forwardRef((props, ref) => {
+  console.log(props);
   return (
     <div>
-      <label>Amount</label>
-      <input type="text" defaultValue={1} className={classes.qty} />
-      <br />
-      <Button>+Add</Button>
+      <label htmlFor={props.id + "a"}>Amount</label>
+      <input id={props.id} ref={ref} type="number" className={classes.qty} />
     </div>
   );
-};
+});
 export default Quantity;
