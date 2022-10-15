@@ -7,9 +7,9 @@ import cartContext from "../../Store/cart-context";
 const Header = (props) => {
   const ctx = useContext(cartContext);
 
-  // const numberOfCartItems = ctx.items.reduce((curNumber, item) => {
-  //   return curNumber + item.amount;
-  // }, 0);
+  const numberOfCartItems = ctx.items.reduce((curNumber, item) => {
+    return curNumber + item.amount;
+  }, 0);
 
   const clickHandler = () => {
     props.onClick(true);
@@ -19,7 +19,7 @@ const Header = (props) => {
       <header className={classes.header}>
         <h1>React Meals</h1>
         <button onClick={clickHandler}>
-          Your Cart <span>{0}</span>
+          Your Cart <span>{numberOfCartItems}</span>
         </button>
       </header>
       <div className={classes["main-image"]}>

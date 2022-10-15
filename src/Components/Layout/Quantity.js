@@ -4,9 +4,9 @@ import classes from "./Quantity.module.css";
 const Quantity = React.forwardRef((props, ref) => {
   console.log(props);
   return (
-    <div>
-      <label htmlFor={props.id + "a"}>Amount</label>
-      <input id={props.id} ref={ref} type="number" className={classes.qty} />
+    <div className={classes.input}>
+      <label htmlFor={props.input.id}>{props.label}</label>
+      <input ref={ref} {...props.input} />
     </div>
   );
 });

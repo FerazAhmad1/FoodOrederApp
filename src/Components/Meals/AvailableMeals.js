@@ -3,6 +3,7 @@ import classes from "./AvailableMeals.module.css";
 import Quantity from "../Layout/Quantity";
 import Button from "../Layout/Button";
 import cartContext from "../../Store/cart-context";
+import MealItemForm from "./MealItemForm";
 const allMeals = [
   {
     id: "m1",
@@ -32,18 +33,9 @@ const allMeals = [
 
 const AvailableMeals = () => {
   const ctx = useContext(cartContext);
-  const inputRef = useRef();
-  console.log(inputRef);
 
-  const clickHandler = (id) => {
-    const enteredAmount = inputRef.current.value;
-    console.log(enteredAmount);
-    const found = allMeals.find((meal) => {
-      return meal.id === id;
-    });
-    ctx.addItem(found);
-    console.log(ctx.items);
-  };
+  const onAddToCartHandler = (amount, id) => {};
+
   return (
     <div className={classes.container}>
       {allMeals.map((meal) => {
@@ -54,10 +46,13 @@ const AvailableMeals = () => {
               <li>{meal.description}</li>
               <li>{meal.price}$</li>
             </ul>
-            <Quantity id={meal.id} ref={inputRef} />
+            <div>
+              {/* <Quantity id={meal.id} ref={inputRef} />
             <Button onClick={clickHandler} id={meal.id}>
               +Add
-            </Button>
+            </Button> */}
+              <MealItemForm onAddToCart={onAddToCartHandler} Meal={meal} />
+            </div>
           </div>
         );
       })}

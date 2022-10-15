@@ -24,6 +24,7 @@ const CartProvider = (props) => {
   const [cartState, disPatch] = useReducer(cartReducer, defaultCartState);
   const ctx = useContext(CartContext);
   const addItemToCartHandler = (meal) => {
+    console.log(meal);
     disPatch({ type: "ADD", item: meal });
   };
   const removeItemFromCartHandler = (id) => {
